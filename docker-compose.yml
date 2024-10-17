@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:17
+    container_name: laboratory-postgres
+    environment:
+      POSTGRES_DB: laboratoire
+      POSTGRES_USER: labuser
+      POSTGRES_PASSWORD: labpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+
+volumes:
+  pgdata:
+    driver: local
