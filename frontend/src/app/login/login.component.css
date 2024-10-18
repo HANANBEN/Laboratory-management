@@ -1,0 +1,112 @@
+/* Conteneur principal avec animation de fond */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d0d0d;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animation dynamique en arrière-plan */
+  .background-animation {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #ff4d4d, #333);
+    animation: animateBackground 10s linear infinite alternate;
+    z-index: -1;
+  }
+  
+  @keyframes animateBackground {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  /* Boîte de connexion */
+  .login-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
+    width: 300px;
+  }
+  
+  /* Titre */
+  .login-box h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+  
+  /* Champ d'entrée */
+  .input-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  /* Animation du label au focus */
+  .input-group label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  
+  .input-group input:focus ~ label,
+  .input-group input:valid ~ label {
+    top: -15px;
+    font-size: 0.8rem;
+    color: #ff4d4d;
+  }
+  
+  /* Bouton de connexion */
+  .login-button {
+    background-color: #ff4d4d;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #e63e3e;
+  }
+  
+  /* Lien d'inscription */
+  .signup-prompt {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .signup-prompt a {
+    color: #ff4d4d;
+    text-decoration: none;
+  }
+  
+  .signup-prompt a:hover {
+    text-decoration: underline;
+  }
+  
